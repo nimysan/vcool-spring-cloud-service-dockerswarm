@@ -7,10 +7,6 @@ services:
       replicas: 1
       restart_policy:
         condition: on-failure
-      resources:
-        limits:
-          cpus: "1"
-          memory: 1024M
     ports:
       - "8088:8088"
     networks:
