@@ -1,18 +1,18 @@
 version: "3"
 services:
   web:
-    # replace username/repo:tag with your name and image details
-    image: nimysan/minem:friendlyhello
+    # Spring-Cloud服务配置项目
+    image: springio/vcool-spring-cloud-config-boot2
     deploy:
-      replicas: 5
+      replicas: 3
       restart_policy:
         condition: on-failure
       resources:
         limits:
-          cpus: "0.1"
+          cpus: "0.5"
           memory: 50M
     ports:
-      - "4000:80"
+      - "8088:8088"
     networks:
       - webnet
   visualizer:
@@ -33,6 +33,7 @@ services:
     volumes:
       - "/home/xiaopeng/data:/data"
     deploy:
+      replicas: 3
       placement:
          constraints: [node.role == manager]
     command: redis-server --appendonly yes
