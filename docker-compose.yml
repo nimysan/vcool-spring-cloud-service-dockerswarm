@@ -10,7 +10,7 @@ services:
       resources:
         limits:
           cpus: "0.5"
-          memory: 50M
+          memory: 1024M
     ports:
       - "8088:8088"
     networks:
