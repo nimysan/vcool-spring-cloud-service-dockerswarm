@@ -1,6 +1,6 @@
 version: "3"
 services:
- scconfig:
+  scconfig:
     # Spring-Cloud服务配置项目
     image: springio/vcool-spring-cloud-config-boot2
     deploy:
